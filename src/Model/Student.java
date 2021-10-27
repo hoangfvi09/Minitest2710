@@ -1,6 +1,6 @@
 package Model;
 
-public class Student extends Person{
+public class Student extends Person {
     private double mathsGrade;
     private double physicsGrade;
     private double chemistryGrade;
@@ -8,7 +8,7 @@ public class Student extends Person{
     public Student() {
     }
 
-    public Student( String fullName, int age, double mathsGrade, double physicsGrade, double chemistryGrade) {
+    public Student(String fullName, int age, double mathsGrade, double physicsGrade, double chemistryGrade) {
         super(fullName, age);
         this.mathsGrade = mathsGrade;
         this.physicsGrade = physicsGrade;
@@ -39,8 +39,8 @@ public class Student extends Person{
         this.chemistryGrade = chemistryGrade;
     }
 
-    public double calAverageMark(){
-        return (mathsGrade+physicsGrade+chemistryGrade)/3;
+    public double calAverageMark() {
+        return (mathsGrade + physicsGrade + chemistryGrade) / 3;
     }
 
 
@@ -53,7 +53,7 @@ public class Student extends Person{
                 "mathsGrade= " + mathsGrade +
                 ", physicsGrade= " + physicsGrade +
                 ", chemistryGrade= " + chemistryGrade +
-                ", averageMark= "+ calAverageMark()+
+                ", averageMark= " + calAverageMark() +
                 '}';
     }
 }

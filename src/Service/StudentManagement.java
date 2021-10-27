@@ -14,12 +14,12 @@ public class StudentManagement {
     }
 
     public StudentManagement() {
-        studentList=new ArrayList<>(10);
+        studentList = new ArrayList<>(10);
     }
 
-    public int findIndexById(int id){
-        for(int i=0;i<studentList.size();i++){
-            if(studentList.get(i).getId()==id){
+    public int findIndexById(int id) {
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getId() == id) {
                 return i;
             }
         }
@@ -27,15 +27,15 @@ public class StudentManagement {
     }
 
 
-    public void add(Student student){
+    public void add(Student student) {
         studentList.add(student);
     }
 
-    public Student findStudentById(int id){
+    public Student findStudentById(int id) {
         return studentList.get(findIndexById(id));
     }
 
-    public void editById(int id, String name, int age, double maths, double physics, double chemistry){
+    public void editById(int id, String name, int age, double maths, double physics, double chemistry) {
         studentList.get(findIndexById(id)).setFullName(name);
         studentList.get(findIndexById(id)).setAge(age);
         studentList.get(findIndexById(id)).setMathsGrade(maths);
@@ -44,29 +44,29 @@ public class StudentManagement {
 
     }
 
-    public void removeById(int id){
+    public void removeById(int id) {
         studentList.remove(findStudentById(id));
 
     }
 
-    public void printSortedList(){
+    public void printSortedList() {
         studentList.sort(Comparator.comparingDouble(Student::calAverageMark));
         printStudentList();
     }
 
-    public Student findStudentWithTopMark(){
-        double topMark=0;
-        int topMarkIndex=0;
-        for(int i=0;i<studentList.size();i++){
-            if (topMark<studentList.get(i).calAverageMark()){
-                topMarkIndex=i;
+    public Student findStudentWithTopMark() {
+        double topMark = 0;
+        int topMarkIndex = 0;
+        for (int i = 0; i < studentList.size(); i++) {
+            if (topMark < studentList.get(i).calAverageMark()) {
+                topMarkIndex = i;
             }
         }
         return studentList.get(topMarkIndex);
     }
 
-    public void printStudentList(){
-        for(Student student: studentList){
+    public void printStudentList() {
+        for (Student student : studentList) {
             System.out.println(student);
         }
         System.out.println("----------------------------------------------------");

@@ -4,14 +4,14 @@ public class Person {
     private int id;
     private String fullName;
     private int age;
-    private static int studentNo=0;
+    private static int studentNo = 0;
 
     public Person() {
         studentNo++;
-        id=studentNo;
+        id = studentNo;
     }
 
-    public Person( String fullName, int age) {
+    public Person(String fullName, int age) {
         studentNo++;
         this.id = studentNo;
         this.fullName = fullName;
